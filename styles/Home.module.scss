@@ -1,19 +1,61 @@
 @use '../styles/Theme/Theme.scss' as *;
 
+//--------------------------------------->small screen error message
 .error__div {
-  width: 100vw;
-  height: 100vh;
+  @include Div(100vw, 100vh, row, color('color_10'));
   margin: 0;
   gap: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: color('color_10');
 }
 
 .error__txt {
   color: color('color_8');
   margin: 0;
   text-align: center;
+  font-family: setFont('primary');
+}
+
+//---------------------------------------> main contentt
+.container {
+  @include Div(100vw, 100vh, column, color('color_10'));
+  margin: 0;
+  gap: 50px;
+  position: relative;
+  padding-left: 5%;
+  padding-top: 1%;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.top__nav {
+  @include Div(auto, auto, column, color('none'));
+  gap: 2vh;
+  font-family: setFont('primary');
+  align-items: flex-start;
+  justify-content: center;
+}
+.hero__img {
+  width: 70vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.newbtn {
+  @include Button(15vw, 8.5vh, 0, color('color_3'), color('color_10'));
+  border-radius: 10px;
+  z-index: 2;
+  cursor: pointer;
+  font-family: setFont('primary');
+  font-size: clamp(1rem, 1.3vw, 3rem);
+
+  &:hover {
+    background-color: color('color_7');
+    color: color('color_8');
+    box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
+  }
 }
