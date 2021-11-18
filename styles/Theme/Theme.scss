@@ -1,0 +1,25 @@
+//--------------------------------------->
+//-->   ### GLOBAL THEME ###
+//--------------------------------------->
+
+//--------------------------------------->
+//--> # COLOR SCHEME
+//--------------------------------------->
+
+$color_list: (
+  'color_1': #60bebf,
+  'color_2': #849c9b,
+  'color_3': #dc4618,
+  'color_4': #bfcbba,
+  'color_5': #3a8eaa,
+  'color_6': #eae8e3,
+  'color_7': #e5ab17,
+  'color_8': #28203d,
+  'color_9': #2a3e4c,
+  'color_10': #dcdcdb,
+);
+
+// --> function to set the color
+@function color($color_name) {
+  @return map-get($color_list, $color_name);
+}
