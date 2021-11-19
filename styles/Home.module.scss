@@ -1,28 +1,10 @@
 @use '../styles/Theme/Theme.scss' as *;
 
-//--------------------------------------->small screen error message
-.error__div {
-  @include Div(100vw, 100vh, row, color('color_10'));
-  margin: 0;
-  gap: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.error__txt {
-  color: color('color_8');
-  margin: 0;
-  text-align: center;
-  font-family: setFont('primary');
-}
-
 //---------------------------------------> main contentt
 .container {
   @include Div(100vw, 100vh, column, color('color_10'));
   margin: 0;
-  gap: 50px;
+  gap: 7vh;
   position: relative;
   padding-left: 5%;
   padding-top: 1%;
@@ -30,13 +12,7 @@
   justify-content: flex-start;
 }
 
-.top__nav {
-  @include Div(auto, auto, column, color('none'));
-  gap: 2vh;
-  font-family: setFont('primary');
-  align-items: flex-start;
-  justify-content: center;
-}
+//  bg image
 .hero__img {
   width: 70vw;
   height: 100vh;
@@ -45,17 +21,65 @@
   right: 0;
 }
 
-.newbtn {
-  @include Button(15vw, 8.5vh, 0, color('color_3'), color('color_10'));
+// nav section
+.top__nav {
+  @include Div(auto, auto, column, color('none'));
+  gap: 2vh;
+  font-family: setFont('primary');
+  align-items: flex-start;
+  justify-content: center;
+
+  a:hover {
+    color: color('color_3');
+    transform: scale(1.03);
+    font-weight: 600;
+    padding-left: 0.3vw;
+    @include HoverCursor;
+    border-left: 2px solid color('color_3');
+  }
+}
+
+// main content section
+.main__content {
+  @include Div(auto, auto, column, color('none'));
+  gap: 1.5vh;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 19vh;
+  z-index: 1;
+}
+
+// main text
+.hero__txt {
+  color: color('color_8');
+  font-family: setFont('primary');
+  letter-spacing: 10px;
+  font-size: clamp(1rem, 6vw, 14rem);
+}
+
+// hero desc text
+.hero__desc {
+  color: color('color_8');
+  font-family: setFont('secondary');
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: clamp(1rem, 2vw, 14rem);
+}
+
+// call to action
+.CTO__btn {
+  @include Button(14vw, 8.5vh, 0, color('color_3'), color('color_10'));
   border-radius: 10px;
   z-index: 2;
-  cursor: pointer;
+  @include HoverCursor;
   font-family: setFont('primary');
   font-size: clamp(1rem, 1.3vw, 3rem);
+  margin-top: 2vh;
 
   &:hover {
     background-color: color('color_7');
     color: color('color_8');
+    transform: translateY(-5px);
     box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
   }
 }

@@ -1,0 +1,173 @@
+@use './Theme/Theme.scss' as *;
+
+.container {
+  @include Div(100vw, 100vh, column, color('color_10'));
+  align-items: flex-start;
+  padding-top: 1%;
+  position: relative;
+  padding-left: 5%;
+}
+
+// hero image
+
+.auth__img_div {
+  @include Div(60vw, 100vh, column, color('none'));
+  align-items: flex-start;
+  justify-content: flex-end;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+.auth__img {
+  @include Div(90%, 90%, row, color('none'));
+}
+
+//---------------------------------------> main content section
+.auth__form {
+  @include Div(31vw, auto, column, color('none'));
+  min-height: 60vh;
+  gap: 1.7vh;
+  padding: 3vh 1vw;
+  font-family: setFont('primary');
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 12vh;
+
+  h1 {
+    font-size: clamp(1rem, 2.5vw, 4rem);
+    margin-bottom: 2vh;
+    letter-spacing: 3px;
+  }
+}
+
+// auth fields
+.auth__field {
+  width: 95%;
+  height: 5vh;
+  min-height: 40px;
+  border: none;
+  padding: 1vw;
+  border-radius: 5px;
+  font-weight: 500;
+  color: color('color_8');
+  outline-color: color('color_5');
+  font-size: clamp(1rem, 0.9vw, 2rem);
+  background: rgba(color('color_2'), 0.3);
+
+  &:hover {
+    @include TextCursor;
+  }
+  &:focus {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.password__input {
+  @include Div(100%, 5vh, row, color('none'));
+  justify-content: center;
+  align-items: center;
+  border: none;
+  position: relative;
+}
+
+.password__indicator {
+  @include Div(auto, auto, row, color('none'));
+  position: absolute;
+  right: 2vw;
+}
+
+// submit button
+.submit__btn {
+  @include HoverCursor;
+  width: 95%;
+  height: 5.5vh;
+  border-radius: 5px;
+  font-weight: 400;
+  color: color('color_10');
+  font-family: setFont('primary');
+  background-color: color('color_3');
+  font-size: clamp(1rem, 1vw, 2rem);
+
+  &:hover {
+    color: color('color_8');
+    background-color: color('color_7');
+    box-shadow: 0 1px 10px -1px rgba(0, 0, 0, 0.25);
+  }
+}
+
+// div to hold social logs
+.social__btn_div {
+  @include Div(95%, 5vh, row, color('none'));
+  align-items: center;
+  justify-content: space-between;
+}
+
+.google__btn {
+  width: 49%;
+  height: 100%;
+  font-weight: 400;
+  border-radius: 5px;
+  @include HoverCursor;
+  color: color('color_3');
+  font-family: setFont('primary');
+  background-color: color('color_6');
+  font-size: clamp(0.5rem, 0.8vw, 2rem);
+
+  &:hover {
+    box-shadow: 0 1px 10px -1px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.facebook__btn {
+  width: 49%;
+  height: 100%;
+  border-radius: 5px;
+  @include HoverCursor;
+  color: color('color_6');
+  font-family: setFont('primary');
+  background-color: color('color_5');
+  font-size: clamp(0.5rem, 0.8vw, 2rem);
+
+  &:hover {
+    box-shadow: 0 1px 10px -1px rgba(0, 0, 0, 0.25);
+  }
+}
+
+// auth switch foogter
+.auth__switch_div {
+  @include Div(auto, 5vh, row, color('none'));
+  align-self: flex-end;
+  font-family: setFont('secondary');
+  font-size: clamp(0.5rem, 1.3vw, 4rem);
+  margin-top: -2vh;
+  white-space: pre-wrap;
+}
+
+.switch__btn {
+  font-weight: 700;
+  @include HoverCursor;
+  color: color('color_5');
+}
+
+//---------------------------------------> flip animation
+.flip__card {
+  animation: flipCard ease-in-out 1200ms forwards;
+  animation-play-state: running;
+}
+
+@keyframes flipCard {
+  20% {
+    border-radius: 20px;
+    transform: translateZ(150px) scale(1.03);
+    box-shadow: 1px 5px 16px -1px rgba(0, 0, 0, 0.2);
+  }
+  70% {
+    border-radius: 20px;
+    transform: translateZ(150px) scale(1.03) rotateY(360deg);
+    box-shadow: 2px 8px 26px 1px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    transform: translateZ(0) scale(1) rotateY(360deg);
+  }
+}

@@ -15,4 +15,55 @@ a {
 
 * {
   box-sizing: border-box;
+  cursor: url('../assets/images/cursor.svg'), auto;
+  transition: 300ms all ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: color('color_8');
+}
+
+//--------------------------------------->small screen error message
+
+.error__div {
+  @include Div(100vw, 100vh, row, color('color_10'));
+  margin: 0;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.error__txt {
+  color: color('color_8');
+  margin: 0;
+  text-align: center;
+  font-family: setFont('primary');
+}
+
+// logo section
+.top__bar {
+  @include Div(auto, 5vh, row, color('none'));
+  align-items: center;
+  gap: 3px;
+  justify-content: center;
+
+  h3 {
+    color: color('color_8');
+    font-family: setFont('primary');
+    font-size: clamp(0.8rem, 1.4vw, 2rem);
+    margin-top: -0.6vh;
+  }
+}
+
+input,
+button {
+  border: none;
 }

@@ -2,6 +2,7 @@
 //-->   ### GLOBAL THEME ###
 //--------------------------------------->
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Graduate&display=swap');
 //--------------------------------------->
 //--> # COLOR SCHEME
 //--------------------------------------->
@@ -65,4 +66,16 @@ $fonts: (
 
 @function setFont($font) {
   @return map-get($fonts, $font);
+}
+
+//--------------------------------------->
+// -->  # CURSOR SETTER
+//--------------------------------------->
+
+@mixin HoverCursor {
+  cursor: url('../../assets/images/cursor_hover.svg'), pointer;
+}
+
+@mixin TextCursor {
+  cursor: url('../../assets/images/text_cursor.svg'), text;
 }
