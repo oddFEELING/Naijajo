@@ -1,0 +1,38 @@
+@use '../Theme/Theme.scss' as *;
+
+.container {
+  @include Div(100vw, 100vh, column, color('color_10'));
+  align-items: flex-start;
+  padding: 1% 2%;
+  gap: 2vh;
+  justify-content: flex-start;
+}
+
+.new__top {
+  margin-left: 3%;
+}
+.top__bar {
+}
+
+.page__content {
+  @include Div(100%, 90vh, row, color('none'));
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1%;
+}
+
+//--------------------------------------->  right hand side
+.nav__section_container {
+  @include Div(17%, 100%, column, color('color_11'));
+  position: relative;
+  align-items: center;
+  border-radius: 15px;
+  @include CardShadow;
+}
+
+//--------------------------------------->  left hand side
+.left__side_container {
+  @include Div(22%, 100%, column, color('color_3'));
+  align-items: center;
+  justify-content: flex-start;
+}

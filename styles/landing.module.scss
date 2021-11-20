@@ -42,10 +42,10 @@
 // main content section
 .main__content {
   @include Div(auto, auto, column, color('none'));
-  gap: 1.5vh;
+  gap: 1vh;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 19vh;
+  margin-top: 20vh;
   z-index: 1;
 }
 
@@ -54,7 +54,7 @@
   color: color('color_8');
   font-family: setFont('primary');
   letter-spacing: 10px;
-  font-size: clamp(1rem, 6vw, 14rem);
+  font-size: clamp(0.5rem, 5.5vw, 14rem);
 }
 
 // hero desc text
@@ -63,12 +63,13 @@
   font-family: setFont('secondary');
   font-weight: 400;
   letter-spacing: 2px;
-  font-size: clamp(1rem, 2vw, 14rem);
+  font-size: clamp(1rem, 1.8vw, 14rem);
 }
 
 // call to action
 .CTO__btn {
   @include Button(14vw, 8.5vh, 0, color('color_3'), color('color_10'));
+  min-height: 50px;
   border-radius: 10px;
   z-index: 2;
   @include HoverCursor;

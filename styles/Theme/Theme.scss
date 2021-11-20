@@ -18,6 +18,8 @@ $color_list: (
   'color_8': #28203d,
   'color_9': #2a3e4c,
   'color_10': #dcdcdb,
+  'color_11': #f4f4f4,
+  'card_color': #ffffff,
   'none': transparent,
 );
 
@@ -37,6 +39,13 @@ $color_list: (
   flex-direction: $direction;
   background-color: $bg_color;
   transition: 300ms all ease-in-out;
+}
+
+@mixin GridDiv($width, $height, $bg_color) {
+  width: $width;
+  height: $height;
+  display: grid;
+  background-color: $bg_color;
 }
 
 //--------------------------------------->
@@ -78,4 +87,8 @@ $fonts: (
 
 @mixin TextCursor {
   cursor: url('../../assets/images/text_cursor.svg'), text;
+}
+
+@mixin CardShadow {
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
 }

@@ -51,6 +51,7 @@
   border-radius: 5px;
   font-weight: 500;
   color: color('color_8');
+  font-family: setFont('primary');
   outline-color: color('color_5');
   font-size: clamp(1rem, 0.9vw, 2rem);
   background: rgba(color('color_2'), 0.3);
@@ -148,6 +149,10 @@
   font-weight: 700;
   @include HoverCursor;
   color: color('color_5');
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 //---------------------------------------> flip animation
@@ -157,12 +162,12 @@
 }
 
 @keyframes flipCard {
-  20% {
+  35% {
     border-radius: 20px;
     transform: translateZ(150px) scale(1.03);
     box-shadow: 1px 5px 16px -1px rgba(0, 0, 0, 0.2);
   }
-  70% {
+  75% {
     border-radius: 20px;
     transform: translateZ(150px) scale(1.03) rotateY(360deg);
     box-shadow: 2px 8px 26px 1px rgba(0, 0, 0, 0.4);

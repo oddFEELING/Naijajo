@@ -1,0 +1,6 @@
+@use '../Theme/Theme.scss' as *;
+
+.container {
+  @include Div(100%, 100%, row, color('color_2'));
+  grid-area: feature;
+}

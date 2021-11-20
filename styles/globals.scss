@@ -48,6 +48,15 @@ h6 {
   font-family: setFont('primary');
 }
 
+.welcome__txt {
+  color: color('color_8');
+  margin: 0;
+  font-weight: 500;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 20rem);
+  font-family: setFont('primary');
+}
+
 // logo section
 .top__bar {
   @include Div(auto, 5vh, row, color('none'));

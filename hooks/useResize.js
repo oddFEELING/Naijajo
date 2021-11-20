@@ -16,9 +16,11 @@ const useResize = () => {
     }
 
     window.addEventListener('resize', handleResize);
+    window.addEventListener('load', handleResize);
     //-->  cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('load', handleResize);
     };
   });
   //-->  return state in boolean
