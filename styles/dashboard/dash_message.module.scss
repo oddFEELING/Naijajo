@@ -2,5 +2,5 @@
 
 .container {
   @include Div(100%, 100%, row, color('color_1'));
-  grid-area: title;
+  grid-area: message;
 }

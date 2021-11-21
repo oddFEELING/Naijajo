@@ -1,9 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import NavProfileNote from './NavProfileNote';
+import NotIcon from '../../assets/icon/notification_icon.svg';
+import MessageIcon from '../../assets/icon/message_icon.svg';
+import BlogIcon from '../../assets/icon/blog_icon.svg';
+import HelpIcon from '../../assets/icon/help_icon.svg';
 import LogoImage from '../../public/favicon.svg';
 import styles from '../../styles/dashboard/dash.module.scss';
 import DashNav from './DashNav';
+import ReportCard from './ReportCard';
 
 export default function Dash({ children }) {
   //--------------------------------------->
@@ -24,13 +29,40 @@ export default function Dash({ children }) {
         </aside>
 
         {/* ----- main content container ----- */}
-        <main>{children}</main>
+        <div className={styles.middle__section}>
+          <h1 className={styles.dash__title}>◾Dashboard</h1>
+          <main>{children}</main>
+        </div>
 
         {/* ----- infotainment section ----- */}
         <section className={styles.left__side_container}>
           {/* ----- icons section ----- */}
-          {/* ----- report section ----- */}
-          {/* ----- profile section ----- */}
+          <div className={styles.left__icon_container}>
+            {/* ----- notifications ucon ----- */}
+            <div className={styles.left__icon}>
+              <Image src={NotIcon} alt='' />
+            </div>
+
+            {/* ----- message icon ----- */}
+            <div className={styles.left__icon}>
+              <Image src={MessageIcon} alt='' />
+            </div>
+
+            {/* ----- blog icon ----- */}
+            <div className={styles.left__icon}>
+              <Image src={BlogIcon} alt='' />
+            </div>
+
+            {/* ----- help icon ----- */}
+            <div className={styles.left__icon}>
+              <Image src={HelpIcon} alt='' />
+            </div>
+          </div>
+          <div className={styles.left__main_content}>
+            {/* ----- report section ----- */}
+            <ReportCard />
+            {/* ----- profile section ----- */}
+          </div>
         </section>
       </section>
     </div>

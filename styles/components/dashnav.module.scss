@@ -1,0 +1,51 @@
+@use '../Theme/Theme.scss' as *;
+
+.nav__container {
+  @include Div(80%, 40%, column, color('none'));
+  align-items: flex-start;
+  margin-top: 15%;
+  padding-left: 15%;
+  gap: 4%;
+}
+
+// nav item div
+.nav__item {
+  @include Div(auto, 9%, row, color('none'));
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1vw;
+}
+
+// div holding nav icons
+.nav__icon {
+  @include Div(20%, 60%, row, color('none'));
+}
+
+// main link texts
+.nav__link {
+  @include HoverCursor;
+  color: color('color_8');
+  margin: 0;
+  font-size: clamp(0.5rem, 1vw, 3rem);
+
+  &:hover {
+    transform: scale(1.05) translateX(0.5vw);
+    font-weight: 600;
+    color: color('color_2');
+  }
+}
+
+.dash__link:hover {
+  color: color('color_1');
+}
+
+.log__link:hover {
+  color: color('color_3');
+}
+
+.foot__txt {
+  position: absolute;
+  bottom: 5vh;
+  font-weight: 500;
+  font-size: clamp(1rem, 1.5vw, 4rem);
+}

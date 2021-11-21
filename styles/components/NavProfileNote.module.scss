@@ -2,7 +2,6 @@
 
 .container {
   @include Div(80%, 33%, column, color('none'));
-  max-height: 250px;
   align-items: center;
   gap: 2vh;
   justify-content: center;
@@ -10,7 +9,7 @@
 }
 
 .image__container {
-  @include Div(110px, 110px, row, color('none'));
+  @include Div(7.5vw, 7.5vw, row, color('none'));
   margin-top: 2vh;
   position: relative;
   border-radius: 100px;

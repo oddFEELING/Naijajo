@@ -1,7 +1,6 @@
 @use '../Theme/Theme.scss' as *;
 
 .container {
-  @include Div(100%, 100%, row, color('color_3'));
+  @include Div(100%, 100%, row, color('color_7'));
   grid-area: update;
-  @include CardShadow;
 }

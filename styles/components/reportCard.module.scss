@@ -1,0 +1,37 @@
+@use '../Theme/Theme.scss' as *;
+
+.container {
+  @include Div(100%, 35%, column, color('color_11'));
+  @include CardShadow;
+  padding: 4% 5%;
+  border-radius: 15px;
+}
+
+//--------------------------------------->  title area
+.report__title_div {
+  @include Div(100%, 10%, row, color('none'));
+  align-items: center;
+}
+
+.report__icon {
+  @include Div(auto, 80%, row, color('none'));
+}
+
+.report__title {
+  font-size: clamp(0.6rem, 0.9vw, 2rem);
+  color: color('color-8');
+  font-weight: 500;
+}
+
+//--------------------------------------->  mid sectiom
+.report__section {
+  @include Div(100%, 30%, row, color('none'));
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single__trans {
+  @include Div(auto, 100%, column, color('none'));
+}
+
+//--------------------------------------->  button section

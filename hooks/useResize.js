@@ -7,7 +7,7 @@ const useResize = () => {
   //-->  effect hook to listen for screen size changes
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 1200) {
+      if (window.innerWidth < 1030) {
         setScreen(true);
         console.warn(`invalid screen size at ${window.innerWidth}px`);
       } else {

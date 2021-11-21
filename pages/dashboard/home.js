@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import styles from '../../styles/dashboard/home.module.scss';
 import Dash from '../../components/layout/Dash';
-import Dash_title from '../../components/dashComponents/dashboard/dash_title';
 import Dash_featured from '../../components/dashComponents/dashboard/dash_featured';
 import Dash_updates from '../../components/dashComponents/dashboard/dash_updates';
+import Dash_ajo from '../../components/dashComponents/dashboard/dash_ajo';
+import Dash_message from '../../components/dashComponents/dashboard/dash_message';
 
 export default function Home() {
   useEffect(() => {}, []);
@@ -16,9 +16,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.container}>
-        <Dash_title />
         <Dash_featured />
         <Dash_updates />
+        <Dash_ajo />
+        <Dash_message />
       </main>
     </div>
   );

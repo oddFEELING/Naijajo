@@ -2,20 +2,22 @@
 
 .container {
   @include Div(100vw, 100vh, column, color('color_10'));
+  min-height: 700px;
+  min-width: 1030px;
   align-items: flex-start;
   padding: 1% 2%;
   gap: 2vh;
   justify-content: flex-start;
 }
 
+// top logo section
 .new__top {
   margin-left: 3%;
-}
-.top__bar {
 }
 
 .page__content {
   @include Div(100%, 90vh, row, color('none'));
+  min-height: 630px;
   align-items: flex-end;
   justify-content: space-between;
   gap: 1%;
@@ -24,15 +26,54 @@
 //--------------------------------------->  right hand side
 .nav__section_container {
   @include Div(17%, 100%, column, color('color_11'));
+  min-width: 200px;
   position: relative;
   align-items: center;
   border-radius: 15px;
   @include CardShadow;
 }
+//--------------------------------------->  middle side
+// middle main content
+.middle__section {
+  @include Div(auto, 100%, column, color('none'));
+  justify-content: space-between;
+}
 
+.dash__title {
+  margin-top: 2vh;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-shadow: 0.5px 2px 4px rgba(0, 0, 0, 0.25);
+  font-size: clamp(0.5rem, 1.5vw, 4rem);
+}
 //--------------------------------------->  left hand side
 .left__side_container {
-  @include Div(22%, 100%, column, color('color_3'));
+  @include Div(20%, 100%, column, color('none'));
+  min-height: 200px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+}
+
+.left__icon_container {
+  @include Div(60%, 5vh, row, color('none'));
+  align-self: flex-end;
+  margin-top: 3vh;
+  justify-content: flex-end;
+  gap: 0.4vw;
+}
+
+.left__main_content {
+  @include Div(100%, 80vh, column, color('none'));
+}
+
+.left__icon {
+  @include Div(auto, 80%, row, clor('none'));
+  @include HoverCursor;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  img {
+    @include HoverCursor;
+  }
 }

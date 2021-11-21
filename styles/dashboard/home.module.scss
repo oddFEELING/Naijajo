@@ -1,14 +1,14 @@
 @use '../Theme/Theme.scss' as *;
 
 .container {
-  @include GridDiv(57vw, 90vh, color('none'));
-  @include CardShadow;
+  @include GridDiv(57vw, 80vh, color('none'));
+  min-height: 560px;
   grid-template-columns: 1fr 1.5fr 1.5fr;
+  grid-template-rows: 1fr 2fr 1.2fr;
   grid-template-areas:
-    'title title title'
     'feature feature feature'
     'update update ajo'
     'message message ajo';
   border-radius: 15px;
-  gap: 0.5vh;
+  gap: 1vh;
 }
