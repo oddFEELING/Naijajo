@@ -64,6 +64,9 @@
 
 .left__main_content {
   @include Div(100%, 80vh, column, color('none'));
+  gap: 2vh;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .left__icon {

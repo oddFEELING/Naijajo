@@ -9,6 +9,7 @@ import LogoImage from '../../public/favicon.svg';
 import styles from '../../styles/dashboard/dash.module.scss';
 import DashNav from './DashNav';
 import ReportCard from './ReportCard';
+import ProfileCard from './ProfileCard';
 
 export default function Dash({ children }) {
   //--------------------------------------->
@@ -62,6 +63,7 @@ export default function Dash({ children }) {
             {/* ----- report section ----- */}
             <ReportCard />
             {/* ----- profile section ----- */}
+            <ProfileCard />
           </div>
         </section>
       </section>

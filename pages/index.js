@@ -1,12 +1,41 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useEffect } from 'react';
 import HeroImage from '../assets/images/home_bg_img.svg';
 import LogoImage from '../assets/images/logo_img.svg';
 import styles from '../styles/landing.module.scss';
+import useUser from '../hooks/useUser';
+import { setuser } from '../redux_features/userReducer';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Home() {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const User = useSelector((state) => state.user.value);
+
+  useEffect(async () => {
+    try {
+      const newUser = await useUser();
+      dispatch(setuser({ ...newUser }));
+    } catch (err) {
+      alert(`⚠ Network Error`);
+      console.error(err);
+    }
+  }, []);
+
+  //-->  hndle page switch
+  function handleRoute() {
+    if (User.User === 'NoUser') {
+      router.push('/auth');
+      return;
+    }
+
+    router.push('/dashboard/welcome');
+    return;
+  }
+
   return (
     <div>
       <Head>
@@ -47,9 +76,9 @@ export default function Home() {
             Collaborations made <br />
             buttery smooth...
           </h3>
-          <Link href='/auth'>
-            <button className={styles.CTO__btn}>Get started</button>
-          </Link>
+          <button className={styles.CTO__btn} onClick={handleRoute}>
+            {User.User === 'NoUser' ? 'Get Started' : "let's go!"}
+          </button>
         </span>
       </main>
     </div>

@@ -1,0 +1,8 @@
+@use '../Theme/Theme.scss' as *;
+
+.container {
+  @include Div(100%, 65%, column, color('color_11'));
+  @include CardShadow;
+  border-radius: 15px;
+  padding: 5%;
+}

@@ -1,6 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import ReportIcon from '../../assets/icon/report_icon.svg';
+import SentIcon from '../../assets/icon/sent_icon.svg';
+import ReceivedIcon from '../../assets/icon/received_icon.svg';
+import BalanceIcon from '../../assets/icon/balance_icon.svg';
 import styles from '../../styles/components/reportCard.module.scss';
 
 export default function ReportCard() {
@@ -20,6 +23,7 @@ export default function ReportCard() {
         <div className={styles.single__trans}>
           <div className={styles.report__head}>
             <p>Sent</p>
+            <Image src={SentIcon} alt='' height='18' width='20' />
           </div>
           <h3 className={styles.sent__amount}>#10,000</h3>
         </div>
@@ -28,15 +32,23 @@ export default function ReportCard() {
         <div className={styles.single__trans}>
           <div className={styles.report__head}>
             <p>Received</p>
+            <Image src={ReceivedIcon} alt='' height='18' width='20' />
           </div>
           <h3 className={styles.received__amount}>#25,000</h3>
         </div>
       </div>
 
       {/* ----- main balance section ----- */}
-      <div></div>
+      <div className={styles.balance__section}>
+        <div className={styles.balance__head}>
+          <p>Balance</p>
+          <Image src={BalanceIcon} alt='' height='18' width='20' />
+        </div>
+        <h3 className={styles.balance__amount}>#15,000</h3>
+      </div>
 
       {/* ----- transaction button ----- */}
+      <button className={styles.main__btn}>View Transactions</button>
     </div>
   );
 }

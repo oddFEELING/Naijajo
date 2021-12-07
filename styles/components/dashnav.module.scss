@@ -13,7 +13,7 @@
   @include Div(auto, 9%, row, color('none'));
   align-items: center;
   justify-content: flex-start;
-  gap: 1vw;
+  gap: 0.7vw;
 }
 
 // div holding nav icons
@@ -29,7 +29,7 @@
   font-size: clamp(0.5rem, 1vw, 3rem);
 
   &:hover {
-    transform: scale(1.05) translateX(0.5vw);
+    transform: scale(1.05) translateX(0.3vw);
     font-weight: 600;
     color: color('color_2');
   }

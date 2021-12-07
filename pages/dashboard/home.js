@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import styles from '../../styles/dashboard/home.module.scss';
 import Dash from '../../components/layout/Dash';
@@ -9,6 +9,7 @@ import Dash_message from '../../components/dashComponents/dashboard/dash_message
 
 export default function Home() {
   useEffect(() => {}, []);
+
   return (
     <div>
       <Head>
